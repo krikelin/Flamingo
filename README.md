@@ -1,5 +1,6 @@
 #Personal Spotify Apps 2.0 technology proposal (Inofficial)
 This app is showcasing a suggestion of technical updates to Spotify App I have to a major update. Among these suggestion includes:
+
 * Ability to allow users to subscribe certain views (defined by the App manifest) of an app and recieve updates related to them
 * Ability to in-place filter in app-views like in Library, Artist view etc. with CTRL+F
 * Ability to send a certain app view to a another user, if the app is live.
