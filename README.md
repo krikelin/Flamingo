@@ -94,6 +94,7 @@ This feature will allow people to subscribe to a certain playlist. To do it this
 To this functionality, I hook up with two events, EVENT.SUBSCRIBE and EVENT.UNSUBSCRIBE on the application event object. These is raised when a user subscribe to a view and is handled in this way:
 
 script.js
+    
     ...
     /**
     * Raises when a user subscribes to a certain view in the app (as defined in the manifest)
