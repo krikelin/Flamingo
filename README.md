@@ -105,19 +105,19 @@ script.js
     *	}
     */
     models.application.observe(models.EVENT.SUBSCRIBE, function(e){
-    var uri = e.uri; // The uri to the view
-    var parameters = e.parameters; // the parameters to the view, %s123 split in a array
-    var user = e.user; // The spotify user name
-    // This is a just a though of a certain concept to register
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://api.someservice.td/playlist/" + parameters[0] +"/add_subscriber?user="+user+"&api_key=07d8c79613718f5c3967da37db79978c");
-    xmlHttp.send(null);
-    
-    // In this way services could see how many people who is intereset of the app
-    /**
-     * This can be used to track the amount of subscribed people to a certain view inside an app,
-     * with your own backend...
-     */
+        var uri = e.uri; // The uri to the view
+        var parameters = e.parameters; // the parameters to the view, %s123 split in a array
+        var user = e.user; // The spotify user name
+        // This is a just a though of a certain concept to register
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "http://api.someservice.td/playlist/" + parameters[0] +"/add_subscriber?user="+user+"&api_key=07d8c79613718f5c3967da37db79978c");
+        xmlHttp.send(null);
+        
+        // In this way services could see how many people who is intereset of the app
+        /**
+         * This can be used to track the amount of subscribed people to a certain view inside an app,
+         * with your own backend...
+         */
     });
     
     /**
@@ -129,15 +129,15 @@ script.js
     *		
     */
     models.application.observe(models.EVENT.UNSUBSCRIBE, function(e){
-    var uri = e.uri; // The uri to the view
-    var parameters = e.parameters; // the parameters to the view, %s123 split in a array
-    var user = e.user; // The spotify user name
-    // This is a just a though of a certain concept to register
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://api.someservice.td/playlist/" + parameters[0] +"/remove_subscriber?user="+user+"&api_key=07d8c79613718f5c3967da37db79978c");
-    xmlHttp.send(null);
-    
-    // In this way services could see how many people who is intereset of the app
+        var uri = e.uri; // The uri to the view
+        var parameters = e.parameters; // the parameters to the view, %s123 split in a array
+        var user = e.user; // The spotify user name
+        // This is a just a though of a certain concept to register
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "http://api.someservice.td/playlist/" + parameters[0] +"/remove_subscriber?user="+user+"&api_key=07d8c79613718f5c3967da37db79978c");
+        xmlHttp.send(null);
+        
+        // In this way services could see how many people who is intereset of the app
     });
 
 #Send apps to people
