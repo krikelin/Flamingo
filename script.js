@@ -101,7 +101,16 @@ function init(){
 		
 		// In this way services could see how many people who is intereset of the app
 	});
-	
+	models.application.observe(models.EVENT.ARGUMENTSCHANGED, function() {
+		// If we are in section djMix, temporary enable cross fading (DJ Mix),
+		var args = models.application.arguments;
+		if(args.length > 0&& args[1] == "djmix") {
+			models.application.player.crossFade = models.CROSSFADE;
+			
+		} else {
+			models.application.player.crossFade = false // Set to the global settings
+		}
+	});
 	/***
 	 * If our view is a playlist view, we could fill it with tracks
 	 */

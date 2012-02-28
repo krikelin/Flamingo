@@ -38,6 +38,12 @@
 			 * state subscription role is stored in variables with numbers %s1,%s2 etc.
 			 */
 			"state" : "list:%s",
+			/***
+			By activating the crossfade functionality, the songs will be crossfaded
+			in this section, but will be set according to the setting everywhere else.
+			Perfect for DJ-mixes
+			*/
+			"crossFade": true
 			/**
 			 * A subscription state may have individual kind of accepted link types, independent on the overall defined in the 
 			 * official stated one. This is overriding the default one.
@@ -104,6 +110,12 @@
 			In my proposal we have a functionality to define a common playlist view
 			in a certain app. The HTML5 will then be a header to the playlist view */
 			"viewType": "playlist"
+			/***
+			By activating the crossfade functionality, the songs will be crossfaded
+			in this section, but will be set according to the setting everywhere else.
+			Perfect for DJ-mixes
+			*/
+			"crossFade": true
 		}
 	]
 }
