@@ -103,6 +103,7 @@ function init(){
 	});
 	models.application.observe(models.EVENT.ARGUMENTSCHANGED, function() {
 		// If we are in section djMix, temporary enable cross fading (DJ Mix),
+		// Enabling cross fading will also temporary enable gapless playback, but only for the view.
 		var args = models.application.arguments;
 		if(args.length > 0&& args[1] == "djmix") {
 			models.application.player.crossFade = models.CROSSFADE;

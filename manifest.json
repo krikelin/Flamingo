@@ -43,7 +43,7 @@
 			in this section, but will be set according to the setting everywhere else.
 			Perfect for DJ-mixes
 			*/
-			"crossFade": true
+			"crossFade": true,
 			/**
 			 * A subscription state may have individual kind of accepted link types, independent on the overall defined in the 
 			 * official stated one. This is overriding the default one.
