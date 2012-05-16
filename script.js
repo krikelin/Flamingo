@@ -9,7 +9,40 @@ var views = sp.import("sp://content/api/scripts/views");
 
 
 function init(){
-
+	
+	/***
+	WIDGET MODE Search
+	
+	Using the search api, allows the client to retrieve data
+	from an app and integrate it with main search functionality
+	
+	@remark This method is called externally from Spotify outside application scope,
+	and won't be able to get some stuff from the app instance.
+	**/
+	models.application.observe(models.EVENT.SEARCH, function(e) {
+	
+		// lookup
+		var q = e.query; // Query arguments
+		var results = [];
+		$.getJSON("http://example.com/playlists.json/all?q=" + q, function (data) {}
+			// This snippet will be appended to the list of result inside the search view
+		
+			data.items.forEach(function (item) {
+				// Create a menu item
+				var entry = {
+					"title":item.title,
+					"description":item.description,
+					"resource":item.uri, // Uri to playlist, create player
+				};
+				
+				// Append it
+				results.append(entry);	
+			}
+		});
+		
+		// Return the deserialized set so Spotify can append it to the app's widget
+		return entry;
+	});
 
 	/**
 	Proposal of a filter event:
