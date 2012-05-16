@@ -5,29 +5,40 @@
 **************************************************************************************************/
 
 {
-	"AppName":"Sample App",
+	"AppName":{
+		"en":"Sample App"
+	},
 	"RequiredPermissions": ["http://ws.spotify.com"],
-	"AppDescription":"",
+	"AppDescription":{
+		"en":""
+	},
 	"AppType":"App",
 	
 	/**
 	 * @proposal
 	 * Denotates if the app allow app specific CTRL+F filtering.
 	 * A proposal feature, not real yet.
+	 UPDATE: Filter feature exists but not documented yet for the public!
 	 */
 	"AllowFilter" : true,
-	"AcceptedLinkTypes" : ["album"],
+	
+	"AcceptedLinkTypes" : ["album", "artist"],
 	/**
 	 Allow a app state to be sent to a friend
 	 */
 	"AllowSendToFriend" : true, 
 	"AllowNotifications" : true,
+	"Notifications":[
+		{
+			"endpoint":	
+		}
+	],
 	/**
 	 * @proposal
 	 * Subscriptions is the proposal of a feature that makes it possible to 'subscribe' to ceratain application state
 	 * in a spotify app. The states are listed in a sub-list of the spotify app
 	 */
-	"Subscriptions":[
+	"AppSubscriptions":[
 		{
 			/**
 			 * Title for the subscription types
@@ -37,7 +48,7 @@
 			 * The app name is appended before automatically. The special arguments that are specific for 
 			 * state subscription role is stored in variables with numbers %s1,%s2 etc.
 			 */
-			"state" : "list:%s",
+			"arguments" : "list",
 			/***
 			By activating the crossfade functionality, the songs will be crossfaded
 			in this section, but will be set according to the setting everywhere else.
@@ -113,12 +124,31 @@
 				"en":"Flamingo"
 			},
 			"arguments":"search",
-			"type":"tab"
+			"type":"widget"
+			/**
+			See script.js for explaination of the proposed js callback
+			**/
 		}
 	],
 	"DefaultTabs":[
 		{
-			"title":"main",
+			"title":{
+				"en":"main"
+			},
+			
+			/***
+			Sub menu
+			****/
+			
+			"menu":[
+				{
+					"title":{
+						"en":"Menuitem 1"	
+					},
+					"arguments":"item1", /** this will navigate to spotify:app:$APPNAME:main:item1 */
+					
+				}
+			],
 			"arguments":"test",			
 			/**
 			In my proposal we have a functionality to define a common playlist view
