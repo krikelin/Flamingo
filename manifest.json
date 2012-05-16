@@ -8,7 +8,6 @@
 	},
 	"AppType":"App",
 	
-		 */
 	"AllowFilter" : true,
 	
 	"AcceptedLinkTypes" : ["album", "artist"],
