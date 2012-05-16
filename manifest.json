@@ -97,15 +97,29 @@
 			  * For a very late one, I'd like a feature that makes us able to add sub states.
 			  */
 			 "Subscriptions":[
-				// Sub states
+			
 			 ]
 		}
 	],
 	
+	/***
+	The Search field allows to integrate applications with the native search results.
+	The app content could be integrated with main search results, in the core manner that it integrates
+	either as a section (that loads a app uri) or a widget (on the header)
+	**/
+	"Search":[
+		{
+			"title":{
+				"en":"Flamingo"
+			},
+			"arguments":"search",
+			"type":"tab"
+		}
+	],
 	"DefaultTabs":[
 		{
 			"title":"main",
-			"parameters":"test",			
+			"arguments":"test",			
 			/**
 			In my proposal we have a functionality to define a common playlist view
 			in a certain app. The HTML5 will then be a header to the playlist view */
