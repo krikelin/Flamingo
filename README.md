@@ -30,6 +30,7 @@ Sounddrop, it would be this when the users subscribe to the playlist "Digster FR
     ...
 
 Will produce this output:
+
 ![ExampleAppSubscription](http://img809.imageshack.us/img809/1361/appsubscription.jpg)
 
 ###Events
