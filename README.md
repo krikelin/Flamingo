@@ -1,5 +1,5 @@
 #Personal Spotify Apps 2.0 technology proposal (Inofficial)
-*Please note this proposal is NOT endosered by Spotify, and all opinions stated in the written code and docs is subject to me, and that I'm not a employer of Spotify (but I'd like to be it) and this functionality mentioned here is NOT working in Spotify app and may not be implemented at all, this is a prototype of my suggestions for a future version of Spotify Apps 2.0 only.*
+*Please note this proposal is NOT endosered by Spotify, and all opinions stated in the written code and docs is subject to me, and that I'm not a employee of Spotify (but I'd like to be it) and this functionality mentioned here is NOT working in Spotify app and may not be implemented at all, this is a prototype of my suggestions for a future version of Spotify Apps 2.0 only.*
 
 **Please note that the code here is not intended for be used within Spotify apps, the code in this repository is only for demonstrating the functionality I propose. I take no responsibility if someone try to run it in Spotify and the consequences of it**
  
