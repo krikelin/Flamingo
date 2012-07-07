@@ -14,7 +14,8 @@ This app is showcasing a suggestion of technical updates to Spotify App I have t
 #Functionality
 
 ##Subscriptions
-This feature will allow people to subscribe to a certain playlist. This is done in JS to subscribe to the current view
+This feature will allow people to subscribe to a certain view. This is done in JS to subscribe to the current view. Clicking on the subscribed view
+will load the view by the current models.application.arguments that was passed when the user created the subscription.
 
     ...
     models.application.subscribe("My cool view", "by someone", "app.png");
