@@ -19,46 +19,6 @@
 			"endpoint":	
 		}
 	],
-	
-	"AppSubscriptions":[
-		{
-			
-			"title" : "Playlists",
-			
-			"arguments" : "list",
-		
-			"crossFade": true,
-		
-			"AcceptedLinkTypes" : ["album"],
-			
-			 "AppIcon": "state.png",
-			 
-			 
-			"Notifications": [
-
-				
-					"checkIn"
-			]
-			 
-			 
-			 "MenuOptions" : [
-				{
-					"title":"View playlist",
-					"callback" : "view_playlist"
-				},
-				{
-					"title":"View similar",
-					"callback" : "a"
-				}
-			 
-			 ],
-			 "Subscriptions":[
-			
-			 ]
-		}
-	],
-	
-
 	"Search":[
 		{
 			"title":{
