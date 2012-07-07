@@ -31,7 +31,7 @@ Sounddrop, it would be this when the users subscribe to the playlist "Digster FR
 
 Will produce this output:
 
-![ExampleAppSubscription](http://img809.imageshack.us/img809/1361/appsubscription.jpg)
+![ExampleAppSubscription](http://img207.imageshack.us/img207/7550/appsubscription.png)
 
 ###Events
 To this functionality, I hook up with two events, EVENT.SUBSCRIBE and EVENT.UNSUBSCRIBE on the application event object. These is raised when a user subscribe to a view and is handled in this way:
