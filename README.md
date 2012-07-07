@@ -15,10 +15,11 @@ This app is showcasing a suggestion of technical updates to Spotify App I have t
 
 ##Subscriptions
 This feature will allow people to subscribe to a certain view. This is done in JS to subscribe to the current view. Clicking on the subscribed view
-will load the view by the current models.application.arguments that was passed when the user created the subscription.
+will load the view by the current models.application.arguments that was passed when the user created the subscription. Assume this is implemented in
+Sounddrop, it would be this when the users subscribe to the playlist "Digster FRESH":
 
     ...
-    models.application.subscribe("My cool view", "by someone", "app.png");
+    models.application.subscribe("Digster fresh", "Digster", "sounddrop_icon.png");
     
     // Listen to unsubscriptions
     models.application.observe(models.EVENT.UNSUBSCRIBE, function() {
@@ -27,6 +28,9 @@ will load the view by the current models.application.arguments that was passed w
     
     
     ...
+
+Will produce this output:
+![ExampleAppSubscription](http://img809.imageshack.us/img809/1361/appsubscription.jpg)
 
 ###Events
 To this functionality, I hook up with two events, EVENT.SUBSCRIBE and EVENT.UNSUBSCRIBE on the application event object. These is raised when a user subscribe to a view and is handled in this way:
