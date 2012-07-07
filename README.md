@@ -14,124 +14,18 @@ This app is showcasing a suggestion of technical updates to Spotify App I have t
 #Functionality
 
 ##Subscriptions
-This feature will allow people to subscribe to a certain playlist. To do it this declaration is applied to the manifest
+This feature will allow people to subscribe to a certain playlist. This is done in JS to subscribe to the current view
 
     ...
-	{
-		"AppName":"Sample App",
-		"RequiredPermissions": ["http://ws.spotify.com"],
-		"AppDescription":"",
-		"AppType":"App",
-		
-		/**
-		 * @proposal
-		 * Denotates if the app allow app specific CTRL+F filtering.
-		 * A proposal feature, not real yet.
-		 */
-		"AllowFilter" : true,
-		"AcceptedLinkTypes" : ["album"],
-		/**
-		 Allow a app state to be sent to a friend
-		 */
-		"AllowSendToFriend" : true, 
-		"AllowNotifications" : true,
-		/**
-		 * @proposal
-		 * Subscriptions is the proposal of a feature that makes it possible to 'subscribe' to ceratain application state
-		 * in a spotify app. The states are listed in a sub-list of the spotify app
-		 */
-		"Subscriptions":[
-			{
-				/**
-				 * Title for the subscription types
-				 */
-				"title" : "Playlists",
-				/**
-				 * The app name is appended before automatically. The special arguments that are specific for 
-				 * state subscription role is stored in variables with numbers %s1,%s2 etc.
-				 */
-				"state" : "list:%s",
-				/***
-				By activating the crossfade functionality, the songs will be crossfaded
-				in this section, but will be set according to the setting everywhere else.
-				Perfect for DJ-mixes
-				*/
-				"crossFade": true,
-				/**
-				 * A subscription state may have individual kind of accepted link types, independent on the overall defined in the 
-				 * official stated one. This is overriding the default one.
-				 */
-				"AcceptedLinkTypes" : ["album"],
-				/**
-				 * OPTIONAL: A certain subscription state should be able to have a different icon apart from the app, but it's highly recommonded
-				 * the app still respect to do one category of thing 
-				 */
-				 "AppIcon": "state.png",
-				 
-				 /**
-				 AppNotify: 
-				 An app can notify the user optionally about new items. The behaviour is set in this function:
-				 */
-				"Notifications": [
-
-						/*
-						The listener is run every time the app starts if the app has set the permission 
-						"AllowNotifications" to true. I propose a event is sent in this following manner with this property
-						notify("checkIn", { uri: <views_address>, parameters: <app's parameters>}) and should
-						return a object that is configured like this if it decide to give a update:
-						
-						{
-							
-							message: <message> (* The message should not be longer than 15 characters *)
-							color: <a html color inside a ""> // color for the message
-							// Other properties may apply later
-						}
-						or if no message should be show, return just False.
-						*/
-						"checkIn"
-				]
-				 
-				 /**
-				 Not neccary but for a very late one, you could set custom right-click menu properties related to the view. It contains a certain string
-				 defined in the application.EVENT.MENU menu alongside with the special views address.
-				 NOTE Remove, and other standard menu items is there by default and can not be changed by this behaviour.
-				 */
-				 "MenuOptions" : [
-					{
-						"title":"View playlist",
-						"callback" : "view_playlist"
-					},
-					{
-						"title":"View similar",
-						"callback" : "a" /** The callback may not contain () after word as it are a flag that are handled as a string (not invoked as a function) */
-					}
-				 
-				 /**
-				  * For a very late one, I'd like a feature that makes us able to add sub states.
-				  */
-				 "Subscriptions":[
-					// Sub states
-				 ]
-			}
-		],
-		
-		"DefaultTabs":[
-			{
-				"title":"main",
-				"parameters":"test",			
-				/**
-				In my proposal we have a functionality to define a common playlist view
-				in a certain app. The HTML5 will then be a header to the playlist view */
-				"viewType": "playlist"
-				/***
-				By activating the crossfade functionality, the songs will be crossfaded
-				in this section, but will be set according to the setting everywhere else.
-				Perfect for DJ-mixes
-				*/
-				"crossFade": true
-			}
-		]
-	}     ...
+    models.application.subscribe("My cool view", "by someone", "app.png");
+    
+    // Listen to unsubscriptions
+    models.application.observe(models.EVENT.UNSUBSCRIBE, function() {
+    	// Do action for unsubscribing.
+    });
+    
+    
+    ...
 
 ###Events
 To this functionality, I hook up with two events, EVENT.SUBSCRIBE and EVENT.UNSUBSCRIBE on the application event object. These is raised when a user subscribe to a view and is handled in this way:
