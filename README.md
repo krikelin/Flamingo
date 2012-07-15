@@ -19,12 +19,27 @@ will load the view by the current models.application.arguments that was passed w
 Sounddrop, it would be this when the users subscribe to the playlist "Digster FRESH":
 
     ...
+    
     models.application.subscribe("Digster fresh", "Digster", "sounddrop_icon.png");
     
     // Listen to unsubscriptions
     models.application.observe(models.EVENT.UNSUBSCRIBE, function() {
-    	// Do action for unsubscribing.
+    	// Do action for unsubscribing.// Tell the server the user is subscribing to the listening room
+    	var xmlHttp = new XMLHttpRequest();
+    	xmlHttp.open("GET", ""http://c01.sounddrop.tld/gateway?key=2562352a52626&room=" + current_room + "&action=subscribe", true);
+    	xmlHttp.send(null);
+    	
+    	
     });
+    // Listen to unsubscriptions
+    models.application.observe(models.EVENT.SUBSCRIBE, function() {
+    	// Do action for unsubscribing.
+    	// Tell the server the user is subscribing to the listening room
+    	var xmlHttp = new XMLHttpRequest();
+    	xmlHttp.open("GET", ""http://c01.sounddrop.tld/gateway?key=2562352a52626&room=" + current_room + "&action=unsubscribe", true);
+    	xmlHttp.send(null);
+    });
+    
     
     
     ...
